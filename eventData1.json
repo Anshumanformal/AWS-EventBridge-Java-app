@@ -1,0 +1,47 @@
+[
+    {
+        "username": "anshu",
+        "city": "Kolkata",
+        "age": "25",
+        "created_at": "11/09/2024",
+        "product": "PL",
+        "integrationName": "Perfios",
+        "integration_statusCode": "200"
+    },
+    {
+        "username": "anshu",
+        "city": "Delhi",
+        "age": "25",
+        "created_at": "11/09/2024",
+        "product": "Nano Loan",
+        "integrationName": "Perfios",
+        "integration_statusCode": "200"
+    },
+    {
+        "username": "anshu",
+        "city": "Delhi",
+        "age": "26",
+        "created_at": "11/09/2024",
+        "product": "Tractor",
+        "integrationName": "Perfios",
+        "integration_statusCode": "300"
+    },
+    {
+        "username": "anshu",
+        "city": "Mumbai",
+        "age": "23",
+        "created_at": "11/09/2024",
+        "product": "Home Loan",
+        "integrationName": "Perfios",
+        "integration_statusCode": "400"
+    },
+    {
+        "username": "anshu",
+        "city": "Chennai",
+        "age": "24",
+        "created_at": "11/09/2024",
+        "product": "PL",
+        "integrationName": "Working Capital",
+        "integration_statusCode": "500"
+    }
+]

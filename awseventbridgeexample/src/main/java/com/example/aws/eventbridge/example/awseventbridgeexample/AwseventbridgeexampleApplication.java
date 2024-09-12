@@ -1,5 +1,6 @@
 package com.example.aws.eventbridge.example.awseventbridgeexample;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 
@@ -14,14 +15,20 @@ import com.amazonaws.services.eventbridge.model.PutEventsResult;
 @SpringBootApplication(exclude = {DataSourceAutoConfiguration.class })
 public class AwseventbridgeexampleApplication {
 
+	@Value("${AWS_ACCESS_KEY_ID}")
+    private String accessKeyId;
+
+	@Value("${AWS_SECRET_ACCESS_KEY}")
+    private String secretAccessKey;
+
 	public static void main(String[] args) {
 		// SpringApplication.run(AwseventbridgeexampleApplication.class, args);
 		AmazonEventBridge client = AmazonEventBridgeClient.builder()
 								.withRegion(Regions.US_EAST_1)
 								.withCredentials(new DefaultAWSCredentialsProviderChain())
 								.build();
-		System.setProperty("aws.accessKeyId", "AKIAYCRX2VFI7HWWQ45Y");
-		System.setProperty("aws.secretKey", "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");
+		// System.setProperty("aws.accessKeyId", "AKIAYCRX2VFI7HWWQ45Y");
+		// System.setProperty("aws.secretKey", "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");
 		putEvents(client); // Call putEvents function
 
 	}
@@ -29,18 +36,18 @@ public class AwseventbridgeexampleApplication {
 	public static void putEvents(AmazonEventBridge client) {
 
 		String detail = """
-				{
+                {
 					"username" : "anshu",
-					"city" : "Mumbai",
+					"city" : "Delhi",
 					"age"  : "25",
-					"created_at" : "06/09/2024",
-					"product" : "PL",
-					"integrationName" : "Perfios",
-					"integration_statusCode" : "200"
+					"created_at" : "10/09/2024",
+					"product" : "PL", 
+					"integrationName" : "Dms",
+					"integration_statusCode" : "500"
 				}
 				""";
+				
 
-					// "switchVar" : "true",
 		// PutEventsRequestEntry
 		PutEventsRequestEntry requestEntry = new PutEventsRequestEntry();
 		requestEntry.withSource("user-event")
