@@ -15,22 +15,15 @@ import com.amazonaws.services.eventbridge.model.PutEventsResult;
 @SpringBootApplication(exclude = {DataSourceAutoConfiguration.class })
 public class AwseventbridgeexampleApplication {
 
-	@Value("${AWS_ACCESS_KEY_ID}")
-    private String accessKeyId;
-
-	@Value("${AWS_SECRET_ACCESS_KEY}")
-    private String secretAccessKey;
-
 	public static void main(String[] args) {
 		// SpringApplication.run(AwseventbridgeexampleApplication.class, args);
 		AmazonEventBridge client = AmazonEventBridgeClient.builder()
 								.withRegion(Regions.US_EAST_1)
 								.withCredentials(new DefaultAWSCredentialsProviderChain())
 								.build();
-		// System.setProperty("aws.accessKeyId", "AKIAYCRX2VFI7HWWQ45Y");
-		// System.setProperty("aws.secretKey", "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");
+		System.setProperty("aws.accessKeyId", "");
+		System.setProperty("aws.secretKey", "");
 		putEvents(client); // Call putEvents function
-
 	}
 
 	public static void putEvents(AmazonEventBridge client) {
