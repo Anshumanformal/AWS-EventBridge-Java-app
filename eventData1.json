@@ -40,8 +40,8 @@
         "city": "Chennai",
         "age": "24",
         "created_at": "11/09/2024",
-        "product": "PL",
-        "integrationName": "Working Capital",
+        "product": "Working Capital",
+        "integrationName": "Perfios",
         "integration_statusCode": "500"
     }
 ]
